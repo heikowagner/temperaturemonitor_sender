@@ -8,6 +8,6 @@ do
 
   echo "Welcome $x times"
   sleep 3s
-  curl -H "Content-Type: application/json" -X GET http://reciever:65432/ -d "{\"Temperatur\":\"$cpu\", \"Hostname\": \"$(hostname)\", \"Time\": \"$(date)\"}"
+  curl -H "Content-Type: application/json" -X GET http://$RECIEVERIP:65432/ -d "{\"Temperatur\":\"$cpu\", \"Hostname\": \"$(hostname)\", \"Time\": \"$(date)\"}"
   x=$(( $x + 1 ))
 done
